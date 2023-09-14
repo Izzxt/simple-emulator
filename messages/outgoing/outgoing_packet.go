@@ -1,4 +1,4 @@
-package outgoing
+package messages
 
 import (
 	"bytes"

@@ -1,4 +1,4 @@
-package incoming
+package messages
 
 import (
 	"bytes"
@@ -14,11 +14,17 @@ type IncomingPacket interface {
 	ReadBool() bool
 	ReadString() string
 	ReadBytes(length int) []byte
+	GetHeader() int16
 }
 
 type incomingPacket struct {
 	header int16
 	bytes  bytes.Reader
+}
+
+// GetHeader implements IncomingPacket.
+func (in *incomingPacket) GetHeader() int16 {
+	return in.header
 }
 
 // ReadBytes implements IncomingPacket.

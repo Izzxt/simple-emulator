@@ -3,7 +3,6 @@ package codec
 import (
 	"bytes"
 	"encoding/binary"
-	"fmt"
 )
 
 func Decode(b []byte) ([]byte, int32, int16) {
@@ -23,8 +22,6 @@ func Decode(b []byte) ([]byte, int32, int16) {
 
 	var messageId int16
 	binary.Read(buf, binary.BigEndian, &messageId)
-	fmt.Println("length :", length)
-	fmt.Println("messageId :", messageId)
 
 	return buf.Bytes(), length, messageId
 }
