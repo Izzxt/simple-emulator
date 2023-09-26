@@ -29,6 +29,7 @@ func (gc *GameClient) AddClient(habbo *Habbo) {
 }
 
 // AddHabbo implements IGameClient.
+
 func (*GameClient) AddHabbo(ssoTicket string) {
 	panic("unimplemented")
 }

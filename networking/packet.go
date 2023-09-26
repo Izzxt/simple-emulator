@@ -2,9 +2,9 @@ package networking
 
 import (
 	"github.com/izzxt/simple-emulator/game"
-	incoming "github.com/izzxt/simple-emulator/messages/incoming"
+	"github.com/izzxt/simple-emulator/packet"
 )
 
 type Packet interface {
-	Execute(gameClient game.IGameClient, incomingPacket incoming.IncomingPacket) Packet
+	Execute(gameClient game.IGameClient, incomingPacket packet.IncomingPacket) Packet
 }
